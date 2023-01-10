@@ -1,5 +1,5 @@
 # Website Company Profile : PrastCloud #
-Website Company Profile ini dibuat oleh Saya sendiri pada melaksanakan Uji Kompetisi Keahlian atau UJIKOM di sekolah saya yaitu [SMK INFOKOM BOGOR](https://smkinfokom-bogor.sch.id/).
+
 
 ## Teknologi yang digunakan ##
 * HTML
