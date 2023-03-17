@@ -1,4 +1,4 @@
-# Website Company Profile : PrastCloud #
+# Website Company Profile - PrastCloud #
 
 
 ## Teknologi yang digunakan ##
