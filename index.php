@@ -50,6 +50,7 @@ require 'koneksi.php';
           <a id="nav-link" class="nav-link nav-link-grow-up" href="blog.php?page=blog">Blog</a>
           <a id="nav-link" class="nav-link nav-link-grow-up" href="page/pricing.php">Pricing</a>
           <a id="nav-link" class="nav-link nav-link-grow-up" href="#contact">Contact Us</a>
+          <a id="nav-link" class="btn btn-md btn-block btn-danger" href="login/" target="_blank">Login</a>
         </div>
       </div>
     </div>
@@ -244,12 +245,12 @@ d="M0,128L48,112C96,96,192,64,288,90.7C384,117,480,203,576,208C672,213,768,139,8
   <section id="testi" class="testi">
     <div class="container">
       <div class="row text-content">
-        <div class="col text-center mb-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+        <div class="col text-center mb-3">
           <h2>Testimonial</h2>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div id="owl-carousel" class="owl-carousel owl-theme col-md-5 text-center" data-aos="fade-up" data-aos-duration="700" data-aos-delay="800">
+        <div id="owl-carousel" class="owl-carousel owl-theme col-md-5 text-center">
           <?php
 
           $query = "SELECT * FROM testi ORDER BY id ASC";
@@ -288,7 +289,7 @@ d="M0,128L48,112C96,96,192,64,288,90.7C384,117,480,203,576,208C672,213,768,139,8
           <h4>Partner</h4>
         </div>
       </div>
-      <div id="owl-carousel2" class="row justify-content-center text-center owl-carousel owl-theme" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+      <div id="owl-carousel2" class="row justify-content-center text-center owl-carousel owl-theme">
         <?php
 
         $query = "SELECT * FROM partners ORDER BY id ASC";
@@ -319,7 +320,7 @@ d="M0,128L48,112C96,96,192,64,288,90.7C384,117,480,203,576,208C672,213,768,139,8
   <section id="contact" class="contact">
     <div class="container">
       <div class="row text-content">
-        <div class="col text-center mb-3" data-aos="fade-up" data-aos-duration="700" data-aos-delay="500">
+        <div class="col text-center mb-3">
           <h2>Contact</h2>
         </div>
       </div>

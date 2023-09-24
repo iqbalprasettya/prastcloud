@@ -18,15 +18,15 @@ if (!empty($_GET['aksi'] == 'login')) {
     $result = $row->fetch();
     $_SESSION['ADMIN'] = $result;
     // status yang diberikan
-    echo "<script>window.location='admin.php';</script>";
+    echo "<script>window.location='admin/';</script>";
   } else {
-    echo "<script>window.location='login.php?get=failed';</script>";
+    echo "<script>window.location='login/index.php?get=failed';</script>";
   }
 }
 
 if (!empty($_GET['aksi'] == 'logout')) {
   session_destroy();
-  echo "<script>window.location='login.php?signout=success';</script>";
+  echo "<script>window.location='login/index.php?signout=success';</script>";
 }
 
 
@@ -38,7 +38,7 @@ if (!empty($_GET['aksi'] == "add-about")) {
 
   if ($about_image_size > 2097152) {
 
-    header("location:admin.php?page=about&pesan=size");
+    header("location:admin/index.php?page=about&pesan=size");
   } else {
 
     if ($about_image_name != "") {
@@ -56,21 +56,21 @@ if (!empty($_GET['aksi'] == "add-about")) {
         $query = mysqli_query($koneksi2, "INSERT INTO about VALUES ('', '$about_text', '$about_image_name_new')");
 
         if ($query) {
-          header("location:admin.php?page=add-about&pesan=berhasil");
+          header("location:admin/index.php?page=add-about&pesan=berhasil");
         } else {
-          header("location:admin.php?page=add-about&pesan=gagal");
+          header("location:admin/index.php?page=add-about&pesan=gagal");
         }
       } else {
-        header("location:admin.php?page=add-about&pesan=ekstensi");
+        header("location:admin/index.php?page=add-about&pesan=ekstensi");
       }
     } else {
 
       $query = mysqli_query($koneksi2, "INSERT INTO about(about_text) VALUES ('$about_text')");
 
       if ($query) {
-        header("location:admin.php?page=add-about&pesan=berhasil");
+        header("location:admin/index.php?page=add-about&pesan=berhasil");
       } else {
-        header("location:admin.php?page=add-about&pesan=gagal");
+        header("location:admin/index.php?page=add-about&pesan=gagal");
       }
     }
   }
@@ -90,8 +90,8 @@ if (!empty($_GET['aksi'] == "edit-hero")) {
       header("location:index.php");
     }
 
-    if ($foto_size > 2097152) {
-      header("location:admin.php?page=hero&pesan=size");
+    if ($hero_image_size > 2097152) {
+      header("location:index.php?page=hero&pesan=size");
     } else {
 
       if ($hero_image_name != "") {
@@ -116,25 +116,25 @@ if (!empty($_GET['aksi'] == "edit-hero")) {
           $query = mysqli_query($koneksi2, "UPDATE hero SET hero_text='$hero_text', hero_image='$hero_image_new' WHERE id='$id'");
 
           if ($query) {
-            header("location:admin.php?page=hero&pesan=berhasil");
+            header("location:admin/index.php?page=hero&pesan=berhasil");
           } else {
-            header("location:admin.php?page=hero&pesan=gagal");
+            header("location:admin/index.php?page=hero&pesan=gagal");
           }
         } else {
-          header("location:admin.php?page=hero&pesan=ekstensi");
+          header("location:admin/index.php?page=hero&pesan=ekstensi");
         }
       } else {
         $query = mysqli_query($koneksi2, "UPDATE hero SET hero_text='$hero_text' WHERE id='$id'");
 
         if ($query) {
-          header("location:admin.php?page=hero&pesan=berhasil");
+          header("location:admin/index.php?page=hero&pesan=berhasil");
         } else {
-          header("location:admin.php?page=hero&pesan=gagal");
+          header("location:admin/index.php?page=hero&pesan=gagal");
         }
       }
     }
   } else {
-    header("location:admin.php?page=hero");
+    header("location:admin/index.php?page=hero");
   }
 }
 //  END Edit Hero
@@ -149,7 +149,7 @@ if (!empty($_GET['aksi'] == "add-service")) {
 
   if ($service_image_size > 2097152) {
 
-    header("location:admin.php?page=service&pesan=size");
+    header("location:admin/index.php?page=service&pesan=size");
   } else {
 
     if ($service_image_name != "") {
@@ -167,21 +167,21 @@ if (!empty($_GET['aksi'] == "add-service")) {
         $query = mysqli_query($koneksi2, "INSERT INTO service VALUES ('', '$service_heading',  '$service_text', '$service_image_name_new')");
 
         if ($query) {
-          header("location:admin.php?page=add-service&pesan=berhasil");
+          header("location:admin/index.php?page=add-service&pesan=berhasil");
         } else {
-          header("location:admin.php?page=add-service&pesan=gagal");
+          header("location:admin/index.php?page=add-service&pesan=gagal");
         }
       } else {
-        header("location:admin.php?page=add-service&pesan=ekstensi");
+        header("location:admin/index.php?page=add-service&pesan=ekstensi");
       }
     } else {
 
       $query = mysqli_query($koneksi2, "INSERT INTO service(service_heading, service_text) VALUES ('$service_heading', '$service_text')");
 
       if ($query) {
-        header("location:admin.php?page=add-service&pesan=berhasil");
+        header("location:admin/index.php?page=add-service&pesan=berhasil");
       } else {
-        header("location:admin.php?page=add-service&pesan=gagal");
+        header("location:admin/index.php?page=add-service&pesan=gagal");
       }
     }
   }
@@ -198,7 +198,7 @@ if (!empty($_GET['aksi'] == "add-blog")) {
 
   if ($blog_image_size > 2097152) {
 
-    header("location:admin.php?page=blog&pesan=size");
+    header("location:admin/index.php?page=blog&pesan=size");
   } else {
 
     if ($blog_image_name != "") {
@@ -216,21 +216,21 @@ if (!empty($_GET['aksi'] == "add-blog")) {
         $query = mysqli_query($koneksi2, "INSERT INTO blog VALUES ('', '$blog_date', '$blog_heading',  '$blog_text', '$blog_image_name_new')");
 
         if ($query) {
-          header("location:admin.php?page=blog&pesan=tambah");
+          header("location:admin/index.php?page=blog&pesan=tambah");
         } else {
-          header("location:admin.php?page=blog&pesan=gagal");
+          header("location:admin/index.php?page=blog&pesan=gagal");
         }
       } else {
-        header("location:admin.php?page=blog&pesan=ekstensi");
+        header("location:admin/index.php?page=blog&pesan=ekstensi");
       }
     } else {
 
       $query = mysqli_query($koneksi2, "INSERT INTO blog(blog_date, blog_heading, blog_text) VALUES ('$blog_date', '$blog_heading', '$blog_text')");
 
       if ($query) {
-        header("location:admin.php?page=blog&pesan=tambah");
+        header("location:admin/index.php?page=blog&pesan=tambah");
       } else {
-        header("location:admin.php?page=blog&pesan=gagal");
+        header("location:admin/index.php?page=blog&pesan=gagal");
       }
     }
   }
@@ -247,7 +247,7 @@ if (!empty($_GET['aksi'] == "add-testi")) {
 
   if ($testi_image_size > 2097152) {
 
-    header("location:admin.php?page=testi&pesan=size");
+    header("location:admin/index.php?page=testi&pesan=size");
   } else {
 
     if ($testi_image_name != "") {
@@ -265,21 +265,21 @@ if (!empty($_GET['aksi'] == "add-testi")) {
         $query = mysqli_query($koneksi2, "INSERT INTO testi VALUES ('', '$testi_name',  '$testi_profession', '$testi_text', '$testi_image_name_new')");
 
         if ($query) {
-          header("location:admin.php?page=testi&pesan=tambah");
+          header("location:admin/index.php?page=testi&pesan=tambah");
         } else {
-          header("location:admin.php?page=testi&pesan=gagal");
+          header("location:admin/index.php?page=testi&pesan=gagal");
         }
       } else {
-        header("location:admin.php?page=testi&pesan=ekstensi");
+        header("location:admin/index.php?page=testi&pesan=ekstensi");
       }
     } else {
 
       $query = mysqli_query($koneksi2, "INSERT INTO testi(testi_name, testi_profession, testi_text) VALUES ('$testi_name', '$testi_profession', '$testi_text')");
 
       if ($query) {
-        header("location:admin.php?page=testi&pesan=tambah");
+        header("location:admin/index.php?page=testi&pesan=tambah");
       } else {
-        header("location:admin.php?page=testi&pesan=gagal");
+        header("location:admin/index.php?page=testi&pesan=gagal");
       }
     }
   }
@@ -294,7 +294,7 @@ if (!empty($_GET['aksi'] == "add-partner")) {
 
   if ($partner_image_size > 2097152) {
 
-    header("location:admin.php?page=partner&pesan=size");
+    header("location:admin/index.php?page=partner&pesan=size");
   } else {
 
     if ($partner_image_name != "") {
@@ -312,12 +312,12 @@ if (!empty($_GET['aksi'] == "add-partner")) {
         $query = mysqli_query($koneksi2, "INSERT INTO partners VALUES ('', '$partner_image_name_new')");
 
         if ($query) {
-          header("location:admin.php?page=partner&pesan=berhasil");
+          header("location:admin/index.php?page=partner&pesan=berhasil");
         } else {
-          header("location:admin.php?page=partner&pesan=gagal");
+          header("location:admin/index.php?page=partner&pesan=gagal");
         }
       } else {
-        header("location:admin.php?page=partner&pesan=ekstensi");
+        header("location:admin/index.php?page=partner&pesan=ekstensi");
       }
     }
   }
@@ -373,8 +373,8 @@ if (!empty($_GET['aksi'] == "edit-service")) {
       header("location:index.php");
     }
 
-    if ($foto_size > 2097152) {
-      header("location:admin.php?page=service&pesan=size");
+    if ($service_image_size > 2097152) {
+      header("location:admin/index.php?page=service&pesan=size");
     } else {
 
       if ($service_image_name != "") {
@@ -388,7 +388,7 @@ if (!empty($_GET['aksi'] == "edit-service")) {
 
         if (in_array($ekstensi, $ekstensi_izin) === true) {
 
-          $get_foto = "SELECT service_image FROM service WHERE id='$id'";
+          $get_foto = "SELECT service_image FROM services WHERE id='$id'";
           $data_foto = mysqli_query($koneksi2, $get_foto);
           $foto_lama = mysqli_fetch_array($data_foto);
 
@@ -396,28 +396,28 @@ if (!empty($_GET['aksi'] == "edit-service")) {
 
           move_uploaded_file($file_tmp, 'assets/img/service/' . $service_image_new);
 
-          $query = mysqli_query($koneksi2, "UPDATE service SET service_heading='$service_heading', service_text='$service_text', service_image='$service_image_new' WHERE id='$id'");
+          $query = mysqli_query($koneksi2, "UPDATE services SET service_heading='$service_heading', service_text='$service_text', service_image='$service_image_new' WHERE id='$id'");
 
           if ($query) {
-            header("location:admin.php?page=service&pesan=berhasil");
+            header("location:admin/index.php?page=service&pesan=berhasil");
           } else {
-            header("location:admin.php?page=service&pesan=gagal");
+            header("location:admin/index.php?page=service&pesan=gagal");
           }
         } else {
-          header("location:admin.php?page=service&pesan=ekstensi");
+          header("location:admin/index.php?page=service&pesan=ekstensi");
         }
       } else {
-        $query = mysqli_query($koneksi2, "UPDATE service SET service_heading='$service_heading', service_text='$service_text' WHERE id='$id'");
+        $query = mysqli_query($koneksi2, "UPDATE services SET service_heading='$service_heading', service_text='$service_text' WHERE id='$id'");
 
         if ($query) {
-          header("location:admin.php?page=service&pesan=berhasil");
+          header("location:admin/index.php?page=service&pesan=berhasil");
         } else {
-          header("location:admin.php?page=service&pesan=gagal");
+          header("location:admin/index.php?page=service&pesan=gagal");
         }
       }
     }
   } else {
-    header("location:admin.php?page=service");
+    header("location:admin/index.php?page=service");
   }
 }
 //  END Delete service
@@ -435,8 +435,8 @@ if (!empty($_GET['aksi'] == "edit-about")) {
       header("location:index.php");
     }
 
-    if ($foto_size > 2097152) {
-      header("location:admin.php?page=about&pesan=size");
+    if ($about_image_size > 2097152) {
+      header("location:admin/index.php?page=about&pesan=size");
     } else {
 
       if ($about_image_name != "") {
@@ -461,25 +461,25 @@ if (!empty($_GET['aksi'] == "edit-about")) {
           $query = mysqli_query($koneksi2, "UPDATE about SET about_text='$about_text', about_image='$about_image_new' WHERE id='$id'");
 
           if ($query) {
-            header("location:admin.php?page=about&pesan=berhasil");
+            header("location:admin/index.php?page=about&pesan=berhasil");
           } else {
-            header("location:admin.php?page=about&pesan=gagal");
+            header("location:admin/index.php?page=about&pesan=gagal");
           }
         } else {
-          header("location:admin.php?page=about&pesan=ekstensi");
+          header("location:admin/index.php?page=about&pesan=ekstensi");
         }
       } else {
         $query = mysqli_query($koneksi2, "UPDATE about SET about_text='$about_text' WHERE id='$id'");
 
         if ($query) {
-          header("location:admin.php?page=about&pesan=berhasil");
+          header("location:admin/index.php?page=about&pesan=berhasil");
         } else {
-          header("location:admin.php?page=about&pesan=gagal");
+          header("location:admin/index.php?page=about&pesan=gagal");
         }
       }
     }
   } else {
-    header("location:admin.php?page=about");
+    header("location:admin/index.php?page=about");
   }
 }
 //  END Delete About
@@ -499,8 +499,8 @@ if (!empty($_GET['aksi'] == "edit-blog")) {
       header("location:index.php");
     }
 
-    if ($foto_size > 2097152) {
-      header("location:admin.php?page=blog&pesan=size");
+    if ($blog_image_size > 2097152) {
+      header("location:admin/index.php?page=blog&pesan=size");
     } else {
 
       if ($blog_image_name != "") {
@@ -525,25 +525,25 @@ if (!empty($_GET['aksi'] == "edit-blog")) {
           $query = mysqli_query($koneksi2, "UPDATE blog SET blog_date='$blog_date', blog_heading='$blog_heading', blog_text='$blog_text', blog_image='$blog_image_new' WHERE id='$id'");
 
           if ($query) {
-            header("location:admin.php?page=blog&pesan=berhasil");
+            header("location:admin/index.php?page=blog&pesan=berhasil");
           } else {
-            header("location:admin.php?page=blog&pesan=gagal");
+            header("location:admin/index.php?page=blog&pesan=gagal");
           }
         } else {
-          header("location:admin.php?page=blog&pesan=ekstensi");
+          header("location:admin/index.php?page=blog&pesan=ekstensi");
         }
       } else {
         $query = mysqli_query($koneksi2, "UPDATE blog SET blog_date='$blog_date', blog_heading='$blog_heading', blog_text='$blog_text' WHERE id='$id'");
 
         if ($query) {
-          header("location:admin.php?page=blog&pesan=berhasil");
+          header("location:admin/index.php?page=blog&pesan=berhasil");
         } else {
-          header("location:admin.php?page=blog&pesan=gagal");
+          header("location:admin/index.php?page=blog&pesan=gagal");
         }
       }
     }
   } else {
-    header("location:admin.php?page=blog");
+    header("location:admin/index.php?page=blog");
   }
 }
 //  END Edit blog
@@ -569,8 +569,8 @@ if (!empty($_GET['aksi'] == "edit-profile")) {
       header("location:index.php");
     }
 
-    if ($foto_size > 2097152) {
-      header("location:admin.php?page=user&pesan=size");
+    if ($profile_image_size > 2097152) {
+      header("location:admin/index.php?page=user&pesan=size");
     } else {
 
       if ($profile_image_name != "") {
@@ -595,25 +595,25 @@ if (!empty($_GET['aksi'] == "edit-profile")) {
           $query = mysqli_query($koneksi2, "UPDATE user SET user_date='$user_date', user_username='$user_username', fullname='$fullname', phone='$phone', email='$email', user_twitter='$user_twitter', user_fb='$user_fb', user_ig='$user_ig', profile_image='$profile_image_new' WHERE id_login='$id_login'");
 
           if ($query) {
-            header("location:admin.php?page=user&pesan=berhasil");
+            header("location:admin/index.php?page=user&pesan=berhasil");
           } else {
-            header("location:admin.php?page=user&pesan=gagal");
+            header("location:admin/index.php?page=user&pesan=gagal");
           }
         } else {
-          header("location:admin.php?page=user&pesan=ekstensi");
+          header("location:admin/index.php?page=user&pesan=ekstensi");
         }
       } else {
         $query = mysqli_query($koneksi2, "UPDATE user SET user_date='$user_date', user_username='$user_username', fullname='$fullname', phone='$phone', email='$email', user_twitter='$user_twitter', user_fb='$user_fb', user_ig='$user_ig' WHERE id_login='$id_login'");
 
         if ($query) {
-          header("location:admin.php?page=user&pesan=berhasil");
+          header("location:admin/index.php?page=user&pesan=berhasil");
         } else {
-          header("location:admin.php?page=user&pesan=gagal");
+          header("location:admin/index.php?page=user&pesan=gagal");
         }
       }
     }
   } else {
-    header("location:admin.php?page=user");
+    header("location:admin/index.php?page=user");
   }
 }
 //  END Edit user
@@ -638,14 +638,14 @@ if (!empty($_GET['aksi'] == "change-pass")) {
       $queryubah = mysqli_query($koneksi2, "UPDATE user SET user_password = '$passmd5' WHERE id_login = '$data[id_login]'");
       
       if ($queryubah) {
-        header("location:admin.php?page=user&pesan=successpass");
+        header("location:admin/index.php?page=user&pesan=successpass");
       }
     } else {
-      header("location:admin.php?page=user&pesan=failedconfpass");
+      header("location:admin/index.php?page=user&pesan=failedconfpass");
     }
 
   } else {
-    header("location:admin.php?page=user&pesan=failedpass");
+    header("location:admin/index.php?page=user&pesan=failedpass");
   }
 
   // $querycekpass = mysqli_query($koneksi2, "SELECT * FROM user WHERE user_password = '$password_lama'");
@@ -655,9 +655,9 @@ if (!empty($_GET['aksi'] == "change-pass")) {
   //   $updatepass = mysqli_query($koneksi2, "UPDATE user SET user_password = '$password_baru' WHERE id_login = 1");
 
   //   if ($updatepass) {
-  //     header("location:admin.php?page=user&pesan=successpass");
+  //     header("location:admin/index.php?page=user&pesan=successpass");
   //   } else {
-  //     header("location:admin.php?page=user&pesan=failedpass");
+  //     header("location:admin/index.php?page=user&pesan=failedpass");
   //   }
   // }
   
@@ -682,17 +682,17 @@ if (!empty($_GET['aksi'] == "delete-blog")) {
       // Mengapus data siswa berdasarkan ID
       $query = mysqli_query($koneksi2, "DELETE FROM blog WHERE id='$id'");
       if ($query) {
-        header("location:admin.php?page=blog&pesan=hapus");
+        header("location:admin/index.php?page=blog&pesan=hapus");
       } else {
-        header("location:admin.php?page=blog&pesan=gagalhapus");
+        header("location:admin/index.php?page=blog&pesan=gagalhapus");
       }
     } else {
       // Apabila ID nya kosong maka akan dikembalikan kehalaman index
-      header("location:admin.php?page=blog");
+      header("location:admin/index.php?page=blog");
     }
   } else {
     // Jika tidak ada Data ID maka akan dikembalikan kehalaman index
-    header("location:admin.php?page=blog");
+    header("location:admin/index.php?page=blog");
   }
 }
 //  END Delete blog
@@ -715,8 +715,8 @@ if (!empty($_GET['aksi'] == "edit-testi")) {
       header("location:index.php");
     }
 
-    if ($foto_size > 2097152) {
-      header("location:admin.php?page=testi&pesan=size");
+    if ($testi_image_size > 2097152) {
+      header("location:admin/index.php?page=testi&pesan=size");
     } else {
 
       if ($testi_image_name != "") {
@@ -741,25 +741,25 @@ if (!empty($_GET['aksi'] == "edit-testi")) {
           $query = mysqli_query($koneksi2, "UPDATE testi SET testi_name='$testi_name', testi_profession='$testi_profession', testi_text='$testi_text', testi_image='$testi_image_new' WHERE id='$id'");
 
           if ($query) {
-            header("location:admin.php?page=testi&pesan=berhasil");
+            header("location:admin/index.php?page=testi&pesan=berhasil");
           } else {
-            header("location:admin.php?page=testi&pesan=gagal");
+            header("location:admin/index.php?page=testi&pesan=gagal");
           }
         } else {
-          header("location:admin.php?page=testi&pesan=ekstensi");
+          header("location:admin/index.php?page=testi&pesan=ekstensi");
         }
       } else {
         $query = mysqli_query($koneksi2, "UPDATE testi SET testi_name='$testi_name', testi_profession='$testi_profession', testi_text='$testi_text' WHERE id='$id'");
 
         if ($query) {
-          header("location:admin.php?page=testi&pesan=berhasil");
+          header("location:admin/index.php?page=testi&pesan=berhasil");
         } else {
-          header("location:admin.php?page=testi&pesan=gagal");
+          header("location:admin/index.php?page=testi&pesan=gagal");
         }
       }
     }
   } else {
-    header("location:admin.php?page=testi");
+    header("location:admin/index.php?page=testi");
   }
 }
 //  END Edit Testi
@@ -781,17 +781,17 @@ if (!empty($_GET['aksi'] == "delete-testi")) {
       // Mengapus data siswa berdasarkan ID
       $query = mysqli_query($koneksi2, "DELETE FROM testi WHERE id='$id'");
       if ($query) {
-        header("location:admin.php?page=testi&pesan=hapus");
+        header("location:admin/index.php?page=testi&pesan=hapus");
       } else {
-        header("location:admin.php?page=testi&pesan=gagalhapus");
+        header("location:admin/index.php?page=testi&pesan=gagalhapus");
       }
     } else {
       // Apabila ID nya kosong maka akan dikembalikan kehalaman index
-      header("location:admin.php?page=testi");
+      header("location:admin/index.php?page=testi");
     }
   } else {
     // Jika tidak ada Data ID maka akan dikembalikan kehalaman index
-    header("location:admin.php?page=testi");
+    header("location:admin/index.php?page=testi");
   }
 }
 //  END Delete testi
@@ -813,17 +813,17 @@ if (!empty($_GET['aksi'] == "delete-partner")) {
       // Mengapus data siswa berdasarkan ID
       $query = mysqli_query($koneksi2, "DELETE FROM partners WHERE id='$id'");
       if ($query) {
-        header("location:admin.php?page=partner&pesan=hapus");
+        header("location:admin/index.php?page=partner&pesan=hapus");
       } else {
-        header("location:admin.php?page=partner&pesan=gagalhapus");
+        header("location:admin/index.php?page=partner&pesan=gagalhapus");
       }
     } else {
       // Apabila ID nya kosong maka akan dikembalikan kehalaman index
-      header("location:admin.php?page=partner");
+      header("location:admin/index.php?page=partner");
     }
   } else {
     // Jika tidak ada Data ID maka akan dikembalikan kehalaman index
-    header("location:admin.php?page=partner");
+    header("location:admin/index.php?page=partner");
   }
 }
 //  END Delete partner
@@ -837,17 +837,17 @@ if (!empty($_GET['aksi'] == "delete-messages")) {
 
       $query = mysqli_query($koneksi2, "DELETE FROM messages WHERE id='$id'");
       if ($query) {
-        header("location:admin.php?page=dashboard");
+        header("location:admin/index.php?page=message");
       } else {
-        header("location:admin.php?page=dashboard");
+        header("location:admin/index.php?page=message");
       }
     } else {
       // Apabila ID nya kosong maka akan dikembalikan kehalaman index
-      header("location:admin.php?page=dashboard");
+      header("location:admin/index.php?page=message");
     }
   } else {
     // Jika tidak ada Data ID maka akan dikembalikan kehalaman index
-    header("location:admin.php?page=dashboard");
+    header("location:admin/index.php?page=message");
   }
 }
 //  END Delete Messages
