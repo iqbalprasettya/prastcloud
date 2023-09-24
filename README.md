@@ -36,7 +36,7 @@ git clone https://github.com/iqbalprasettya/prastcloud.git
 2. Import Database to PHPMyAdmin
 
 ### Demo 
-Link : http://prastcloud.000webhostapp.com
+Link : http://prastcloud.infinityfreeapp.com/
 
 
 
