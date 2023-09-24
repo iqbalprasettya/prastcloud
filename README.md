@@ -1,9 +1,9 @@
 <br/>
 <p align="center">
-  <h3 align="center">WeddingCuy - Wedding Organizer Website</h3>
+  <h3 align="center">PrastCloud - Company Profile Website</h3>
 
   <p align="center">
-    This Wedding Organizer website was created by me when carrying out a Skills Competition Test or UJIKOM at a vocational school
+    Awesome Company Profile Website with admin panel for editing data and uploading images
     <br/>
     <br/>
   </p>
